@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  font-family: 'Poppins', sans-serif;
+  background-color: #FCE4EC; 
+  overflow-x: hidden;
+
+}
+
+
+.main-header {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 100px; 
+    background: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(10px); 
+    padding: 15px 40px;
+    width: fit-content; 
+    margin: 0 auto; 
+    border-radius: 50px; 
+    box-shadow: 0 10px 30px rgba(216, 27, 96, 0.1); 
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #D81B60;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: #D81B60;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    opacity: 1; 
+}
+
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    letter-spacing: 5px;
+    color: #D81B60;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 100px 10% 0 10%; 
+  background: linear-gradient(135deg, #FCE4EC 0%, #F5E1DA 100%);
+  gap: 60px;
+}
+
+
+.hero-content {
+  flex: 1.2; 
+  max-width: 550px;
+}
+
+.hero-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  color: #D81B60;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+
+.hero-content h2 span {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: italic;
+  display: block;
+  font-size: 48px;
+  opacity: 0.85;
+  margin-top: 8px;
+}
+
+.hero-content p {
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+.hero-actions{
+  display:flex;
+  align-items: center;
+  gap:25px;
+  margin-bottom: 40px;
+  
+}
+
+.cta-button {
+  padding: 16px 45px;
+  border: none;
+  border-radius: 50px;
+  background: #D81B60;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 15px rgba(216, 27, 96, 0.25); 
+}
+
+.cta-button:hover {
+  background: #C2185B;
+  transform: translateY(-5px); 
+  box-shadow: 0 15px 25px rgba(216, 27, 96, 0.4); 
+}
+
+.hero-visual{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+  position: relative;
+  padding: 60px 20px;
+}
+.video-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.pill {
+  position: absolute;
+  z-index: 10;
+  background: #FEF3F8;
+  border: 1px solid rgba(216, 27, 96, 0.2); 
+  padding: 8px 16px; 
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600; 
+  color: #D81B60;  
+  box-shadow: 0 4px 15px rgba(216, 27, 96, 0.15); 
+  white-space: nowrap;
+  transition: 0.3s ease;
+}
+
+.pill-1 { 
+  top: 10%; 
+  left: -90px; 
+}
+
+
+.pill-2 { 
+  top: 40%; 
+  right: -90px; 
+  left: auto;   
+}
+
+
+.pill-3 { 
+  bottom: 15%; 
+  left: -60px; 
+}
+
+.hero-video {
+  opacity: 0;
+  animation: fadeFromRight 0.9s ease forwards 0.5s;
+}
+
+
+.hero-video video {
+  width: 250px;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+@keyframes fadeFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.pill:hover {
+  background: rgba(255, 255, 255, 0.85); 
+  transform: translateY(-5px) scale(1.05); 
+  /* ışıltı */
+  box-shadow: 0 10px 40px rgba(216, 27, 96, 0.2), 
+              0 0 30px rgba(255, 255, 255, 0.9); 
+  
+  border: 1px solid rgba(255, 255, 255, 0.6); 
+}
+
+.hero-video video:hover {
+  transform: scale(1.02); 
+}
+
+@media (max-width: 992px) {
+  main {
+    flex-direction: column;
+    text-align: center;
+    padding: 120px 5% 60px 5%;
+  }
+
+  .hero-video {
+    justify-content: center;
+  }
+
+  .hero-content h2 {
+    font-size: 42px;
+  }
+}
+
+.hero-badge{
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+    background: rgba(216, 27, 96, 0.1); /* Çok hafif pembe arka plan */
+    color: #D81B60;
+    width: fit-content;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+
+}
+
+.badge-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #D81B60;
+    border-radius: 50%;
+    display: inline-block;
+}
