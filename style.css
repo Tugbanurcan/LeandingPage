@@ -7,11 +7,12 @@
 }
 
 body {
-
   font-family: 'Poppins', sans-serif;
   background-color: #FCE4EC; 
   overflow-x: hidden;
-
+}
+html{
+  scroll-behavior: smooth;
 }
 
 
@@ -81,7 +82,7 @@ body {
     color: #D81B60;
 }
 
-main {
+.hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -131,6 +132,7 @@ main {
 }
 
 .cta-button {
+  text-decoration: none;
   padding: 16px 45px;
   border: none;
   border-radius: 50px;
@@ -255,23 +257,152 @@ main {
   display: flex;
   align-items: center;
   gap: 8px;
-    background: rgba(216, 27, 96, 0.1); /* Çok hafif pembe arka plan */
-    color: #D81B60;
-    width: fit-content;
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
+  background: rgba(216, 27, 96, 0.1); 
+  color: #D81B60;
+  width: fit-content;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
 
 }
 
 .badge-dot {
-    width: 6px;
-    height: 6px;
-    background-color: #D81B60;
-    border-radius: 50%;
-    display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #D81B60;
+  border-radius: 50%;
+  display: inline-block;
 }
+
+.btn-secondary{
+  display: inline-flex;
+  align-items: center;
+  background:none;
+  border: none;
+  color: #D81B60;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;        
+  font-weight: 600;
+  background: transparent;
+
+}
+
+.btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; 
+  width: 35px;             
+  height: 35px;             
+  border: 2px solid #D81B60;   
+  border-radius: 50%;       
+  font-size: 1.2rem;        
+  transition: all 0.3s ease; 
+}
+
+
+.btn-secondary:hover .btn-arrow {
+  transform: translateX(8px); /* Oku 8px sağa kaydırır */
+  background-color: #D81B60;
+  color: white;
+}
+
+.hero-stats{
+  display: flex;
+  gap:40px;
+  font-size: 15px;
+  color:#C2185B;
+  margin-bottom: 40px;
+}
+
+/* 2. section*/
+.features-section{
+  background-color:#FFFBF1 ;
+  min-height: 100vh; 
+  width: 100%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 80px 5%; 
+
+  background-image: linear-gradient(rgba(255, 251, 241, 0.85), rgba(255, 251, 241, 0.85)), 
+                      url('videos/back.jpg');
+    
+    background-size: cover;         
+    background-position: center;  
+    background-attachment: fixed;  
+}
+.features-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #000;
+  margin-top: 10px;
+}
+
+.features-container{
+  max-width: 1200px;
+  width: 100%;
+  display:flex;
+  gap:60px;
+  flex-direction: column;
+}
+
+.features-card{
+  background-color:#FCE4EC;
+  border-radius: 15px;
+  padding: 30px;
+  font-family: 'Playfair Display', serif;
+  text-align: left;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden; /* Işıltı efekti için şart */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Kart boylarını eşitler */
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Boyutları eşitler */
+  gap: 25px;
+}
+
+.fetures-card p {
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.features-card h3{
+  font-size: 23px;
+  margin-bottom: 10px;
+  color:#D81B60;
+}
+
+.features-card:hover {
+  transform: translateY(-10px); /* Hafif yukarı kalkma */
+}
+
+.features-title {
+    color: #D81B60;
+    font-size: 3.5rem; 
+    font-weight: 700;
+    letter-spacing: -1px; /* Harfleri biraz yaklaştırarak daha modern durmasını sağlar */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Hafif derinlik */
+}
+
+.features-subtitle {
+  color: #C2185B;
+    letter-spacing: 4px; /* Üstteki küçük yazıyı daha "high-fashion" yapar */
+    text-transform: uppercase;
+}
+
+
+
