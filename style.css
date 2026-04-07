@@ -19,7 +19,9 @@ html{
 
 #home-section, 
 #product, 
-#features {
+#features,
+.cta-section,
+.footer {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
@@ -434,14 +436,12 @@ html{
 }
 
 .card{
-  
   border-radius:20px;
   padding:36px 32px;
   overflow:hidden;
   transition: transform .35s ease, box-shadow .35s ease;
   cursor:default;
 }
-
 
 .card:hover {
    transform:translateY(-6px);  
@@ -451,57 +451,47 @@ html{
 .card.box { 
   grid-row: 1/3;      /*  2 satır kapla */
   perspective: 1000px;
-  padding: 0;
-  
+  padding: 0;  
 }
 
 .card.box1 {
- background:#F5E1DA;
+ background:#f6d8cd;
 }
 
 .card.box2 {
-   background: #D81B60;
-   color:#fff;
+  background: #D81B60;
+  display: flex;
+  flex-direction: column; /* Elemanları alt alta dizer */
+  gap: 10px; 
+  color:#fff; 
 }
 
 .box3{
-  background:#f98cb0; 
-  display: flex;
-  flex-direction: column; /* Elemanları alt alta dizer */
-  gap: 40px;   
-  font-family: 'Playfair Display', serif;
-  font-size:1.5rem;
-  line-height: 1.1;
-  color:black;          
+  background:#f98cb0;         
 }
 
-.box3 .b-stat-num{
-  font-weight: 1000;
-  color: black;
+.card.box2 .b-title1 {
+  color: #fff;
+  font-weight: 600;
 }
 
-.box4 .b-stat-num {
-    font-weight: 800;       
-    font-size: 1.2rem;    
-    margin-top: 25px;
-    color:#333;       
+.card.box2 .b-stat-num {
+  color: #ffe3ec; 
+  font-weight: 400;
+ 
 }
 
-.box4 .b-stat-label {
-    display: block;        
-    font-weight: 900;     
-    color: #C2185B;
-   
+.card.box2 .b-title1 {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
 }
+
 
 .card.box4{ 
   background:#ffe5ed;
   padding: 0;
-  width: 250px; 
-  height: 280px; 
   overflow: hidden; 
-  border-radius: 15px; 
-  
+  border-radius: 15px;  
 }
 
 .img-box{
@@ -517,6 +507,13 @@ html{
   line-height: 1.7;
 }
 
+.b-stat-num{
+  font-size: 17px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+
+}
+
 .b-title{
   font-family: 'Playfair Display', serif;
     font-size:2rem;
@@ -525,14 +522,16 @@ html{
     color:#D81B60;
 }
 
-.b-title1{
+.b-title1 {
   font-family: 'Playfair Display', serif;
-    font-size:2rem;
-    line-height: 1.1;
-    margin-bottom: 15px;
-    color:#1a0a12;
-
+  font-size:2rem;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  color:#1a0a12;
 }
+
+
+
 
 .flip-card-inner {
   position: relative;
@@ -579,3 +578,7 @@ html{
     padding: 70px 30px;      
    
 }
+
+ 
+
+ 
