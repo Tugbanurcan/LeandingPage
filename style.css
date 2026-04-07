@@ -13,6 +13,15 @@ body {
 }
 html{
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory; 
+  height: 100%;
+}
+
+#home-section, 
+#product, 
+#features {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 
@@ -322,87 +331,251 @@ html{
   margin-bottom: 40px;
 }
 
-/* 2. section*/
-.features-section{
-  background-color:#FFFBF1 ;
-  min-height: 100vh; 
-  width: 100%;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  padding: 80px 5%; 
+/* 2. section */
+.product-section{
 
-  background-image: linear-gradient(rgba(255, 251, 241, 0.85), rgba(255, 251, 241, 0.85)), 
-                      url('videos/back.jpg');
-    
-    background-size: cover;         
-    background-position: center;  
-    background-attachment: fixed;  
-}
-.features-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #000;
-  margin-top: 10px;
-}
-
-.features-container{
-  max-width: 1200px;
-  width: 100%;
-  display:flex;
-  gap:60px;
-  flex-direction: column;
-}
-
-.features-card{
-  background-color:#FCE4EC;
-  border-radius: 15px;
-  padding: 30px;
-  font-family: 'Playfair Display', serif;
-  text-align: left;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden; /* Işıltı efekti için şart */
   display: flex;
-  flex-direction: column;
-  height: 100%; /* Kart boylarını eşitler */
-}
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Boyutları eşitler */
-  gap: 25px;
+  height: 100vh; 
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  align-items: stretch; 
+
 }
 
-.fetures-card p {
+.product-info-side {
+    flex: 0 0 35%; /* Genişliğin %35'ini kaplar ve sabit kalır */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+    background-color: #F5E1DA; 
+}
+
+.product-subtitle {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color:#D81B60;
+}
+
+.product-description{
+  
   font-size: 17px;
   color: #555;
   margin-bottom: 40px;
   line-height: 1.7;
 }
 
-.features-card h3{
-  font-size: 23px;
-  margin-bottom: 10px;
-  color:#D81B60;
+.sliding-panels {
+  flex: 1;       /* Sağ tarafın kaplar */
+  display: flex;    
+  gap:1px;
+  height: 100%;
+
 }
 
-.features-card:hover {
-  transform: translateY(-10px); /* Hafif yukarı kalkma */
-}
-
-.features-title {
-    color: #D81B60;
-    font-size: 3.5rem; 
-    font-weight: 700;
-    letter-spacing: -1px; /* Harfleri biraz yaklaştırarak daha modern durmasını sağlar */
-    text-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Hafif derinlik */
-}
-
-.features-subtitle {
-  color: #C2185B;
-    letter-spacing: 4px; /* Üstteki küçük yazıyı daha "high-fashion" yapar */
-    text-transform: uppercase;
+.panel {
+  flex: 1;                  /* Her panel eşit genişlik alır */
+ background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: flex 0.7s cubic-bezier(0.05, 0.61, 0.41, 0.95); /* Yumuşak geçiş */
+    cursor: pointer;
+    border-left: 1px solid rgba(255,255,255,0.3);
 }
 
 
+.panel:hover {
+  flex: 3; /* Üzerine gelince sola kayma ve genişleme */
+}
 
+
+/* 3. section */
+.features-section{
+  background-color:#FFFBF1 ;
+  min-height: 100vh; 
+  width: 100%;
+  display: flex;     
+  align-items: center; 
+  justify-content: center; 
+  padding: 80px 5%; 
+
+  background-image: linear-gradient(rgba(255, 251, 241, 0.85), rgba(255, 251, 241, 0.85)), 
+                      url('videos/back.jpg');
+
+  background-size: cover;         
+  background-position: center;  
+  background-attachment: fixed;  
+  padding:100px 6%;
+  position:relative;
+  overflow:hidden;
+  
+}
+
+.bento-grid {
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr; /* 3 sütun */
+  grid-template-rows:auto auto;  /*2 eşit satır*/
+  gap:16px;
+  max-width: 850px;
+  margin: 0 auto;
+  height: 550px;
+}
+
+.card{
+  
+  border-radius:20px;
+  padding:36px 32px;
+  overflow:hidden;
+  transition: transform .35s ease, box-shadow .35s ease;
+  cursor:default;
+}
+
+
+.card:hover {
+   transform:translateY(-6px);  
+   box-shadow:0 20px 50px rgba(0,0,0,0.08); 
+ }
+
+.card.box { 
+  grid-row: 1/3;      /*  2 satır kapla */
+  perspective: 1000px;
+  padding: 0;
+  
+}
+
+.card.box1 {
+ background:#F5E1DA;
+}
+
+.card.box2 {
+   background: #D81B60;
+   color:#fff;
+}
+
+.box3{
+  background:#f98cb0; 
+  display: flex;
+  flex-direction: column; /* Elemanları alt alta dizer */
+  gap: 40px;   
+  font-family: 'Playfair Display', serif;
+  font-size:1.5rem;
+  line-height: 1.1;
+  color:black;          
+}
+
+.box3 .b-stat-num{
+  font-weight: 1000;
+  color: black;
+}
+
+.box4 .b-stat-num {
+    font-weight: 800;       
+    font-size: 1.2rem;    
+    margin-top: 25px;
+    color:#333;       
+}
+
+.box4 .b-stat-label {
+    display: block;        
+    font-weight: 900;     
+    color: #C2185B;
+   
+}
+
+.card.box4{ 
+  background:#ffe5ed;
+  padding: 0;
+  width: 250px; 
+  height: 280px; 
+  overflow: hidden; 
+  border-radius: 15px; 
+  
+}
+
+.img-box{
+  width: 100%;
+  height: 100%; 
+  background-size: cover;  
+  background-position: center;  
+}
+
+.b-text{
+  font-size: 17px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.b-title{
+  font-family: 'Playfair Display', serif;
+    font-size:2rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color:#D81B60;
+}
+
+.b-title1{
+  font-family: 'Playfair Display', serif;
+    font-size:2rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    color:#1a0a12;
+
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card.box:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden; /* Arka kartın gözükmesini engeler */
+  -webkit-backface-visibility: hidden;  /* eski tarayıcılar içn uyumluluk */
+}
+
+.flip-card-front {
+    background: transparent; 
+    padding: 0 !important;  
+    overflow: hidden;        
+    display: flex;           
+}
+
+.flip-card-front video {
+    width: 100%;
+    height: 100%;            
+    object-fit: cover;      
+    border-radius: 20px;     
+        
+}
+
+
+.flip-card-back {
+    background: #1a0a12;     
+    color: #fff;
+    transform: rotateY(180deg);
+    padding: 70px 30px;      
+   
+}
